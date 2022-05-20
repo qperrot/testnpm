@@ -1,0 +1,26 @@
+{
+  "name": "testnpmchain",
+  "version": "1.0.0",
+  "description": "test create an npm file",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qperrot/testnpm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qperrot/testnpm/issues"
+  },
+  "homepage": "https://github.com/qperrot/testnpm#readme",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
