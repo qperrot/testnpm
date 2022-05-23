@@ -4,7 +4,6 @@ from starkware.cairo.common.cairo_builtins import HashBuiltin, SignatureBuiltin
 from starkware.cairo.common.math import assert_le, assert_not_zero
 from starkware.cairo.common.uint256 import (
     Uint256, uint256_add, uint256_check, uint256_le, uint256_sub)
-
 # In Solidity ERC20 decimals is a uint8.
 const MAX_DECIMALS = 256
 

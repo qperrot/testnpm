@@ -5,10 +5,10 @@ from starkware.cairo.common.cairo_builtins import HashBuiltin
 from starkware.cairo.common.math import assert_not_zero
 from starkware.cairo.common.uint256 import (
     Uint256, uint256_add, uint256_check, uint256_le, uint256_lt, uint256_sub)
-from test.contracts.ERC20_base import (
+from contracts.ERC20_base import (
     ERC20_allowances, ERC20_approve, ERC20_burn, ERC20_initializer, ERC20_mint, ERC20_transfer,
     allowance, balanceOf, decimals, name, symbol, totalSupply)
-from test.contracts.permitted import (
+from contracts.permitted import (
     permitted_initializer, permitted_minter, permitted_minter_only, permittedMinter)
 from starkware.starknet.common.syscalls import get_caller_address
 
