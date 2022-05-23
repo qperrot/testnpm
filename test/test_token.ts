@@ -10,7 +10,7 @@ const SYMBOL = starknet.shortStringToBigInt("LINKTOKEN")
 const DECIMALS = 18
 
 describe('ContractTests', function () {
-    this.timeout(300_000);
+    this.timeout(600_000);
     let accountMinter: ArgentAccount;
     let accountUser1: ArgentAccount;
     let accountUser2: ArgentAccount;
@@ -123,9 +123,9 @@ describe('ContractTests', function () {
     it('Test transferFrom', async () => {
         await accountMinter.invoke(ERC20Contract, 'permissionedMint', {recipient: accountUser1.starknetContract.address, amount: { low: 10n, high: 0n } })
         await accountMinter.invoke(ERC20Contract, 'permissionedMint', {recipient: accountUser2.starknetContract.address, amount: { low: 5n, high: 0n } })
-
-        await accountMinter.invoke(ERC20Contract, 'increaseAllowance', {spender: accountUser2.starknetContract.address, added_value: { low: 2n, high: 0n } })
-        await accountMinter.invoke(ERC20Contract, 'increaseAllowance', {spender: accountUser1.starknetContract.address, added_value: { low: 2n, high: 0n } })
+        await new Promise((resolve) => setTimeout(resolve,30000))
+        await  accountUser2.invoke(ERC20Contract, 'increaseAllowance', {spender: accountMinter.starknetContract.address, added_value: { low: 7n, high: 0n } })
+        await  accountUser1.invoke(ERC20Contract, 'increaseAllowance', {spender: accountMinter.starknetContract.address, added_value: { low: 7n, high: 0n } })
         {
             await accountMinter.invoke(ERC20Contract, 'transferFrom', {sender: accountUser1.starknetContract.address, recipient: accountUser2.starknetContract.address, amount: { low: 3n, high: 0n } })
 
